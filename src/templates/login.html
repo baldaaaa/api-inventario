@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Como Funciona</title>
+  <link rel="icon" type="favicon/x-icon" href="{% static 'img/favicon.jpg' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" />
+</head>
+
+<body>
+  <header id="header">
+    <a href="{% url 'index' %}"><img id="logo" src="{% static 'img/Classi.fy-logo.png' %}" alt="Classy-Logo"></a>
+
+    <section class="pages">
+      <nav id="main-nav">
+        <ul>
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li><a href="{% url 'como-funciona' %}">Cómo funciona</a></li>
+          <li><a href="{% url 'precios' %}">Precios</a></li>
+          <li><a href="{% url 'faqs' %}">FAQs</a></li>
+          <li><a href="{% url 'contacto' %}">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="login-box">
+        <nav id="login-box-nav">
+          <a href="{% url 'ingresa' %}" class="login">Log in</a>
+          <button class="signup-btn"><a href="#"></a> Sign up</button>
+        </nav>
+      </div>
+    </section>
+  </header>
+</body>
+
+</html>

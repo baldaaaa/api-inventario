@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Precios</title>
+  <link rel="icon" type="favicon/x-icon" href="{% static 'img/favicon.jpg' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" />
+</head>
+
+<body>
+  <header id="header">
+    <a href="{% url 'index' %}"><img id="logo" src="{% static 'img/Classi.fy-logo.png' %}" alt="Classy-Logo"></a>
+
+    <section class="pages">
+      <nav id="main-nav">
+        <ul>
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li><a href="{% url 'como-funciona' %}">Cómo funciona</a></li>
+          <li><a href="{% url 'precios' %}">Precios</a></li>
+          <li><a href="{% url 'faqs' %}">FAQs</a></li>
+          <li><a href="{% url 'contacto' %}">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="login-box">
+        <nav id="login-box-nav">
+          <a href="{% url 'ingresa' %}" class="login">Log in</a>
+          <button class="signup-btn"><a href="#"></a> Sign up</button>
+        </nav>
+      </div>
+    </section>
+  </header>
+
+  <h2>COMIENCE SU PRUEBA GRATUITA AHORA</h2>
+  <button>Quiero mi prueba gratuita</button>
+  <br><br><br>
+  <table border="1px" cellspacing="10px" cellpadind="10px">
+    <tr>
+      <td>Avanzado</td>
+      <td>Ultra</td>
+      <td>Empresarial</td>
+    </tr>
+    <tr>
+      <td>$39/mes
+        <ul>
+          <li>2000 entradas</li>
+          <li>Códigos QR ilimitados</li>
+          <li>Alertas de stock bajo</li>
+          <li>10 campos personalizados</li>
+          <li>3 usuarios gratuitos incluidos</li>
+          <li>Informes</li>
+          <li>Centro de ayuda y soporte por correo electrónico</li>
+        </ul>
+      </td>
+      <td><br>
+        $99/mes
+        <ul>
+          <li>5000 entradas</li>
+          <li>Campos personalizados ilimitados</li>
+          <li>5 licencias de usuario gratuitas</li>
+          <li>Permisos de usuario avanzados</li>
+          <li>Informes personalizados</li>
+          <li>Integraciones</li>
+          <li>Capacidad de escáner de mano</li>
+          <li>Soporte prioritario e incorporación</li>
+        </ul>
+      </td>
+      <td>
+        A partir de $249/mes:
+        <ul>
+          <li>Entradas ilimitadas</li>
+          <li>Planes de usuario personalizados (10 o más)</li>
+          <li>Permisos de usuario de varios niveles</li>
+          <li>Integraciones a escala empresarial</li>
+          <li>Seguridad de nivel empresarial</li>
+          <li>Servicios de inicio de sesión único</li>
+          <li>Soporte e incorporación premium</li>
+          <li>Entrenamientos de miembros del equipo</li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+</body>
+
+</html>
