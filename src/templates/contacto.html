@@ -1,80 +1,47 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="es">
+{% extends 'base.html' %}
+{% block meta %}
+<title>Contacto</title>
+{% endblock %}
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contacto</title>
-  <link rel="icon" type="favicon/x-icon" href="{% static 'img/favicon.jpg' %}" />
-  <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" />
-
-</head>
-
-<body>
-  <header id="header">
-    <a href="{% url 'index' %}"><img id="logo" src="{% static 'img/Classi.fy-logo.png' %}" alt="Classy-Logo"></a>
-    
-    <section class="pages">
-      <nav id="main-nav">
-        <ul>
-          <li><a href="{% url 'index' %}">Home</a></li>
-          <li><a href="{% url 'como-funciona' %}">Cómo funciona</a></li>
-          <li><a href="{% url 'precios' %}">Precios</a></li>
-          <li><a href="{% url 'faqs' %}">FAQs</a></li>
-          <li><a href="{% url 'contacto' %}">Contacto</a></li>
-        </ul>
-      </nav>
-      <div class="login-box">
-        <nav id="login-box-nav">
-          <a href="{% url 'ingresa' %}" class="login">Log in</a>
-          <button class="signup-btn"><a href="#"></a> Sign up</button>
-        </nav>
-      </div>
-    </section>
-  </header>
-
-  <p><b>Contacto</b></p>
-  <fieldset>
-    <legend>Datos personales</legend>
-    <form action="#" method="post">
-      <label for="name">Nombre:</label><br>
-      <input type="text" name="name" placeholder="Nombre" />
-      <br><br>
-      <label for="lastname">Apellido</label><br>
-      <input type="text" name="lastname" placeholder="Apellido" />
-      <br><br>
-      <label for="mail">Email</label><br>
-      <input type="mail" name="mail" placeholder="ejemplo@mail.com" />
-  </fieldset>
+{% block content %}
+<p><b>Contacto</b></p>
+<fieldset>
+  <legend>Datos personales</legend>
+  <form action="#" method="post">
+    <label for="name">Nombre:</label><br>
+    <input type="text" name="name" placeholder="Nombre" />
+    <br><br>
+    <label for="lastname">Apellido</label><br>
+    <input type="text" name="lastname" placeholder="Apellido" />
+    <br><br>
+    <label for="mail">Email</label><br>
+    <input type="mail" name="mail" placeholder="ejemplo@mail.com" />
+</fieldset>
+<br><br><br>
+<div class="form2">
+  <label for="experiencia">¿Cuenta actualmente con un inventario online?</label>
+  <select name="experiencia" id="experiencia">
+    <option value="si">Sí</option>
+    <option value="No">No</option>
+    <br>
+  </select>
   <br><br><br>
-  <div class="form2">
-    <label for="experiencia">¿Cuenta actualmente con un inventario online?</label>
-    <select name="experiencia" id="experiencia">
-      <option value="si">Sí</option>
-      <option value="No">No</option>
-      <br>
-    </select>
-    <br><br><br>
-    <label for="use"><b>¿Que uso le dará?</b></label>
-    <br>
-    <label for="empresarial">Uso empresarial</label>
-    <input type="checkbox" name="empresarial" value="Business" />
-    <br>
-    <label for="personal">Uso personal</label>
-    <input type="checkbox" name="personal" value="Personal" />
-    <br>
-    <label for="otro">Otro</label>
-    <input type="checkbox" name="otro" value="Other" />
-    <br>
-    <textarea name="comentario" id="comentario" cols="30" rows="10"
-      placeholder="Ingrese aquí sus comentarios"></textarea>
-    <br>
-    <input type="submit" value="Enviar" />
-    <input type="reset" value="Cancelar" />
-  </div>
-  </form>
-</body>
-
-</html>
+  <label for="use"><b>¿Que uso le dará?</b></label>
+  <br>
+  <label for="empresarial">Uso empresarial</label>
+  <input type="checkbox" name="empresarial" value="Business" />
+  <br>
+  <label for="personal">Uso personal</label>
+  <input type="checkbox" name="personal" value="Personal" />
+  <br>
+  <label for="otro">Otro</label>
+  <input type="checkbox" name="otro" value="Other" />
+  <br>
+  <textarea name="comentario" id="comentario" cols="30" rows="10"
+    placeholder="Ingrese aquí sus comentarios"></textarea>
+  <br>
+  <input type="submit" value="Enviar" />
+  <input type="reset" value="Cancelar" />
+</div>
+</form>
+{% endblock %}

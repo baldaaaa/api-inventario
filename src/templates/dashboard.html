@@ -1,0 +1,198 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block csscont %}
+<style>
+    .iKLgyx {
+        position: absolute;
+        cursor: pointer;
+        right: 8px;
+        top: 8px;
+    }
+    .ouASUa {
+        margin-top: 225px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div id="page-content-wrapper" class="bg-wrapper container-fluid px-0">
+    
+    <div id="dash-fcZBxe" class="fcZBxe p-5">
+        <form>
+            <div style="display: flex; flex-flow: row nowrap; justify-content: space-between; align-items: center;">
+                <h1>Dashboard</h1>
+                <button type="button" class="btn btn-primary">
+                    <span class="badge bg-info"><i class="bi bi-sliders"></i></span>
+                    Filtra Carpetas     
+                </button>
+            </div>
+            <div width="100%" class="lprUh" height="1px"></div>
+            <div style="display: flex; flex-flow: row nowrap; justify-content: flex-start; align-items: center;">
+                <div>
+                    <span class="pe-2">Carpetas Seleccionada:</span>
+                </div>
+                <div>
+                    <span class="badge bg-secondary">Todas las Carpetas</span>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+    <div class="ouASUa container-sm d-flex justify-content-center pb-3">
+        <div class="col-8">
+            <div class="py-4">
+                <h5>Resumen de Inventario</h5>
+            </div>
+    
+            <div class="row row-cols-1 row-cols-md-4 g-4">
+                
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="text-center">
+                                <div class="iKLgyx">
+                                    <span class="isvg loaded">
+                                        <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="16" height="16" rx="8" fill="#EEF0F4"></rect><path d="M6.701 10.844V13H8.9v-2.156H6.701zm-2.254-4.62h2.058c0-.252.028-.485.084-.7a1.7 1.7 0 0 1 .252-.574c.122-.168.27-.299.448-.392.187-.103.406-.154.658-.154.374 0 .663.103.868.308.215.205.322.523.322.952.01.252-.037.462-.14.63-.093.168-.22.322-.378.462s-.331.28-.518.42c-.186.14-.364.308-.532.504a2.907 2.907 0 0 0-.448.686c-.121.27-.196.607-.224 1.008v.63h1.89v-.532c.038-.28.126-.513.266-.7.15-.187.318-.35.504-.49.187-.15.383-.294.588-.434a2.82 2.82 0 0 0 .574-.532c.178-.205.322-.453.434-.742.122-.29.182-.658.182-1.106 0-.27-.06-.56-.182-.868a2.358 2.358 0 0 0-.574-.882c-.27-.27-.63-.495-1.078-.672-.438-.187-.99-.28-1.652-.28-.513 0-.98.089-1.4.266-.41.168-.765.406-1.064.714-.29.308-.518.672-.686 1.092-.158.42-.242.882-.252 1.386z" fill="#878D9B"></path></svg>
+                                    </span>
+                                </div>
+                                <div class="py-3">
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+                                            <g fill="none" fill-rule="evenodd">
+                                                <rect width="40" height="40" fill="#C8E6EE" rx="20"></rect>
+                                                <path fill="#0096BC" fill-rule="nonzero" d="M22.13 12h-6.5c-.9 0-1.63.72-1.63 1.6v12.8c0 .88.73 1.6 1.63 1.6h9.74c.9 0 1.63-.72 1.63-1.6v-9.6L22.12 12zm1.62 12.8h-6.5v-1.6h6.5v1.6zm0-3.2h-6.5V20h6.5v1.6zm-2.44-4v-4.4l4.47 4.4h-4.47z"></path>
+                                            </g>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <h1 class="card-title">6</h1>
+                                <h6 class="card-text">Items</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="text-center">
+                                <div class="py-3">
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+                                            <g fill="none" fill-rule="evenodd">
+                                                <rect width="40" height="40" fill="#FEEECB" rx="20"></rect>
+                                                <path fill="#F9AD01" fill-rule="nonzero" d="M26.4 15.6H20L18.4 14h-4.8c-.9 0-1.6.7-1.6 1.6v9.8c0 .9.7 1.6 1.6 1.6h12.8c.9 0 1.6-.7 1.6-1.6v-8.1c0-1-.7-1.7-1.6-1.7z"></path>
+                                            </g>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <h1 class="card-title">2</h1>
+                                <h6 class="card-text">Carpetas</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="text-center">
+                                <div class="py-3">
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+                                            <g fill="none" fill-rule="evenodd">
+                                                <rect width="40" height="40" fill="#EDDBFE" rx="20"></rect>
+                                                <path fill="#A245F6" fill-rule="nonzero" d="M20 12.73l-8 3.46v1.21l8 3.47 8-3.47v-1.2l-8-3.47zm8 6.38l-1.6.7-6.4 2.77-8-3.46v1.73l8 3.47 8-3.47v-1.74zm0 3.52l-1.6.69-6.4 2.77-8-3.46v1.74l8 3.47 8-3.47v-1.74z"></path>
+                                            </g>
+                                        </svg>
+                                    </span>
+                                </div>   
+                                <h1 class="card-title">105</h1>
+                                <h6 class="card-text">Cantidad Total</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="text-center">
+                                <div class="py-3">
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+                                            <g fill="none" fill-rule="evenodd">
+                                                <rect width="40" height="40" fill="#FDE3D6" rx="20"></rect>
+                                                <path fill="#F36E2D" fill-rule="nonzero" d="M12.8 13a.79.79 0 0 0-.8.78v7.78c0 .43.36.77.8.77h14.4a.79.79 0 0 0 .8-.77v-7.78a.79.79 0 0 0-.8-.78H12.8zm1.53 1.56h11.34c.12.33.39.59.73.7v4.8c-.34.13-.6.39-.73.72H14.33a1.18 1.18 0 0 0-.73-.71v-4.8c.34-.12.6-.38.73-.71zm5.67.77a2.37 2.37 0 0 0-2.4 2.34c0 1.28 1.07 2.33 2.4 2.33s2.4-1.04 2.4-2.33a2.37 2.37 0 0 0-2.4-2.34zm-4 1.56c-.44 0-.8.35-.8.78 0 .43.36.77.8.77.44 0 .8-.34.8-.77a.79.79 0 0 0-.8-.78zm8 0c-.44 0-.8.35-.8.78 0 .43.36.77.8.77.44 0 .8-.34.8-.77a.79.79 0 0 0-.8-.78zM12 23.1v1.56h16V23.1H12zm0 2.33V27h16v-1.56H12z"></path>
+                                            </g>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <h1 class="card-title">$3.1K</h1>
+                                <h6 class="card-text">Valor Total</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+
+        </div>
+
+        
+
+    </div>
+    <div class="container-sm d-flex justify-content-center pb-3">
+        <div class="col-8">
+            <div class="py-4">
+                <h5>Actividad Reciente</h5>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                      This is some text within a card body.
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                      This is some text within a card body.
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                      This is some text within a card body.
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                      This is some text within a card body.
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                      This is some text within a card body.
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                      This is some text within a card body.
+                    </div>
+                </div>
+            </div>
+            <div><p class="text-danger">Ver toda la actividad</p></div>
+        </div>
+    </div>
+
+    <script>
+        var s = document.getElementById("dash-fcZBxe").style
+        document.onscroll = function(){scrollfn(this)};
+        function scrollfn(e){
+            if(e.scrollingElement.scrollTop > 10){
+                s.boxShadow = "rgba(29, 34, 43, 0.2) 0px 3px 8px -3px";
+            } else {
+                s.boxShadow = null
+            }
+        };
+    </script>
+</div>
+
+{% endblock %}

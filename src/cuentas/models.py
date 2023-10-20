@@ -5,41 +5,15 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 
 from rest_framework.authtoken.models import Token
+from items.models import Carpeta
 
 
 #######                  ACCOUNTS & DATABASES
 
-class MyAccountManager(BaseUserManager):
-	def create_user(self, email, first_name, last_name, password=None):
-		if not email:
-			raise ValueError('Este es un campo requerido')
-		if not first_name:
-			raise ValueError('Este es un campo requerido')
-		if not last_name:
-			raise ValueError('Este es un campo requerido')
-
-		user = self.model(
-			email=self.normalize_email(email),
-			first_name=first_name,
-			last_name=last_name,
-		)
-
-		user.set_password(password)
-		user.save(using=self._db)
-		return user
-
-	def create_superuser(self, email, first_name, last_name, password):
-		user = self.create_user(
-			email=self.normalize_email(email),
-			password=password,
-			first_name=first_name,
-			last_name=last_name,
-		)
-		user.is_admin = True
-		user.is_staff = True
-		user.is_superuser = True
-		user.save(using=self._db)
-		return user
+INDUSTRY_CHOICES = (
+	('Industrial/Manufactura','Industrial/Manufactura'),
+	('Contabilidad','Contabilidad'),
+)
 
 FUNCION_CHOICES = (
 	('Administrativo','Administrativo'),
@@ -55,13 +29,39 @@ ROL_CHOICES = (
 	('Consumidor','Consumidor'),
 )
 
+
+class MyAccountManager(BaseUserManager):
+	def create_user(self, email, full_name, password=None):
+		if not email:
+			raise ValueError('Este es un campo requerido')
+		if not full_name:
+			raise ValueError('Este es un campo requerido')
+
+		user = self.model(
+			email=self.normalize_email(email),
+			full_name=full_name,
+
+		)
+
+		user.set_password(password)
+		user.save(using=self._db)
+		return user
+
+	def create_superuser(self, email, full_name, password):
+		user = self.create_user(
+			email=self.normalize_email(email),
+			password=password,
+			full_name=full_name,
+		)
+		user.is_admin = True
+		user.is_staff = True
+		user.is_superuser = True
+		user.save(using=self._db)
+		return user
+
 class Account(AbstractBaseUser):
 	email 					= models.EmailField(verbose_name="email", max_length=60, unique=True)
-	first_name 				= models.CharField(max_length=30)
-	last_name				= models.CharField(max_length=30)
-	telephone				= models.CharField(max_length=20, null=False, blank=True)
-	job_function			= models.CharField(max_length=50, choices=FUNCION_CHOICES, default=FUNCION_CHOICES[0])
-	team_role				= models.CharField(max_length=50, choices=ROL_CHOICES, default=ROL_CHOICES[0])
+	full_name				= models.CharField(max_length=255)
 	date_joined				= models.DateTimeField(verbose_name='date joined', auto_now_add=True)
 	last_login				= models.DateTimeField(verbose_name='last login', auto_now=True)
 	is_admin				= models.BooleanField(default=False)
@@ -70,7 +70,7 @@ class Account(AbstractBaseUser):
 	is_superuser			= models.BooleanField(default=False)
 
 	USERNAME_FIELD = 'email'
-	REQUIRED_FIELDS = ['first_name','last_name']
+	REQUIRED_FIELDS = ['full_name']
 
 	objects = MyAccountManager()
 
@@ -95,13 +95,21 @@ def create_auth_token(sender, instance=None, created=False, **kwargs):
         Token.objects.create(user=instance)
 
 
-INDUSTRY_CHOICES = (
-	('Industrial/Manufactura','Industrial/Manufactura'),
-	('Contabilidad','Contabilidad'),
-)
+class UserProfile(models.Model):
+	user 					= models.OneToOneField(Account, on_delete=models.CASCADE)
+	job_function			= models.CharField(max_length=50, choices=FUNCION_CHOICES, default=FUNCION_CHOICES[0])
+	team_role				= models.CharField(max_length=50, choices=ROL_CHOICES, default=ROL_CHOICES[0])
+	telephone_number		= models.CharField(max_length=15, null=True, blank=False)
+
+    # Add any other user-specific fields you need
+	
+	def __str__(self):
+		return self.user.full_name
 
 class Company(models.Model):
-	nombre 				= models.CharField(max_length=50, unique=True)
+	user 				= models.OneToOneField(Account, on_delete=models.CASCADE)
+	nombre 				= models.CharField(max_length=50)
+	carpeta				= models.OneToOneField(Carpeta, on_delete=models.CASCADE)
 	industria 			= models.CharField(max_length=100, null=True, choices=INDUSTRY_CHOICES)
 	color_compania 		= models.CharField(max_length=7, default='#FFFFFF')
 
@@ -109,8 +117,8 @@ class Company(models.Model):
 		return self.nombre
 
 
-class Team(models.Model):
-	company_name 	= models.ForeignKey(Company, on_delete=models.CASCADE)
+# class Team(models.Model):
+# 	company_name 	= models.ForeignKey(Company, on_delete=models.CASCADE)
 
-	def __str__(self):
-		return self.company_name
+# 	def __str__(self):
+# 		return self.company_name

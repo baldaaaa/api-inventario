@@ -1,8 +1,8 @@
 from django.contrib import admin
 
-from .models import Item, Etiqueta, Carpeta
+from .models import Item, Carpeta
 
 
 admin.site.register(Item)
-admin.site.register(Etiqueta)
+
 admin.site.register(Carpeta)

@@ -4,8 +4,8 @@ from django.contrib.auth.admin import UserAdmin
 from cuentas.models import Account
 
 class AccountAdmin(UserAdmin):
-    list_display = ('email', 'first_name', 'last_name', 'date_joined', 'last_login', 'is_admin', 'is_staff')
-    search_fields = ('first_name', 'last_name', 'email')
+    list_display = ('email', 'full_name', 'date_joined', 'last_login', 'is_admin', 'is_staff')
+    search_fields = ('full_name', 'email')
     read_only_fields = ('date_joined', ' last_login')
 
     ordering = ()
@@ -14,7 +14,7 @@ class AccountAdmin(UserAdmin):
     fieldsets = ()
     add_fieldsets = (
         (None, {
-            'fields': ('first_name', 'last_name', 'email', 'password', 'is_admin', 'is_active', 'is_staff', 'is_superuser')
+            'fields': ('full_name', 'email', 'password', 'is_admin', 'is_active', 'is_staff', 'is_superuser')
         }),
     )
 
